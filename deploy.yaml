@@ -14,12 +14,11 @@ spec:
     spec:
       containers:
       - name: api-gateway
-        image: ${REPOSITORY_TAG}
+        image: swetasir/apigateway:latest
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
         # Using this as a way to avoid having to bother pushing images to registry.
-        imagePullPolicy: Never
         readinessProbe:
           httpGet:
             path: /
